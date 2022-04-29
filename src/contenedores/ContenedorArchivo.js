@@ -1,6 +1,6 @@
-const fs = require('fs');
+import fs from 'fs';
 
-class Contenedor {
+class ContenedorArchivo {
 
     constructor(ruta) {
         this.ruta = ruta;
@@ -26,11 +26,12 @@ class Contenedor {
             return id;
 
         } catch (e) {
-            throw new Error(`Hubo un problema en save(): ${e.message}`)
+            throw new Error(`Hubo un problema en save(): ${e.message}`);
         }
     }
 
-    async getById(id) {
+    async getById(idParam) {
+        const id = Number(idParam);
         try {
             const stringFileContent = await fs.promises.readFile(this.ruta, 'utf-8');
             if (stringFileContent === '') {
@@ -59,11 +60,12 @@ class Contenedor {
             }
             return JSON.parse(fileContent);;
         } catch (e) {
-            throw new Error(`Hubo un problema en getAll(): ${e.message}`)
+            throw new Error(`Hubo un problema en getAll(): ${e.message}`);
         }
     }
 
-    async deleteById(id) {
+    async deleteById(idParam) {
+        const id = Number(idParam);
         const element = await this.getById(id);
         if (element === null) {
             return null;
@@ -85,11 +87,12 @@ class Contenedor {
             await fs.promises.writeFile(this.ruta, '');
 
         } catch (e) {
-            throw new Error(`Hubo un problema en deleteAll(): ${e.message}`)
+            throw new Error(`Hubo un problema en deleteAll(): ${e.message}`);
         }
     }
 
-    async updateById(id, object) {
+    async updateById(idParam, object) {
+        const id = Number(idParam);
         const element = await this.getById(id);
         if (element === null) {
             return null;
@@ -103,5 +106,5 @@ class Contenedor {
     }
 }
 
-module.exports = Contenedor;
+export default ContenedorArchivo;
 

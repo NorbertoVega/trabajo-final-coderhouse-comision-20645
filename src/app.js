@@ -1,7 +1,7 @@
-const express = require('express');
-const { json } = require('express');
-const product = require('./router/product');
-const carrito = require('./router/carrito');
+import express from 'express';
+import { json } from 'express';
+import product from './router/product.js';
+import carrito from './router/carrito.js';
 
 const server = express();
 
@@ -24,4 +24,4 @@ server.delete('*', (req, res) => {
     res.status(404).send({ error: -2, descripcion: `ruta:${req.path} método:DELETE no implementada` });
 });
 
-module.exports = server;
+export default server;
