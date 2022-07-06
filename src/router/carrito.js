@@ -1,28 +1,12 @@
 import { Router } from 'express';
-import dotenv from 'dotenv';
+import config from '../../config.js';
+import CarritosDaoMongoDB from '../daos/carritos/CarritosDaoMongoDB.js';
 
 const router = Router();
-dotenv.config();
 
-let cartDao;
 const { productDao } = await import('./product.js');
+const cartDao = new CarritosDaoMongoDB(false);
 
-if (process.env.PERSISTENCE === 'ARCHIVO') {
-    const { default: CarritosDaoArchivo } = await import('../daos/carritos/CarritosDaoArchivos.js');
-    cartDao = new CarritosDaoArchivo();
-}
-else if (process.env.PERSISTENCE === 'FIREBASE') {
-    const { default: CarritosDaoFirebase } = await import('../daos/carritos/CarritosDaoFirebase.js');
-    cartDao = new CarritosDaoFirebase(false);
-}
-else if (process.env.PERSISTENCE === 'MONGODB') {
-    const { default: CarritosDaoMongoDB } = await import('../daos/carritos/CarritosDaoMongoDB.js');
-    cartDao = new CarritosDaoMongoDB(false);
-}
-else if (process.env.PERSISTENCE === 'MEMORIA') {
-    const { default: CarritosDaoMemoria } = await import('../daos/carritos/CarritosDaoMemoria.js');
-    cartDao = new CarritosDaoMemoria();
-}
 
 router.post('/', async (req, res) => {
     try {
@@ -110,7 +94,7 @@ router.delete('/:id/productos/:id_prod', async (req, res) => {
         }
 
         let filtered
-        if (process.env.PERSISTENCE === 'MONGODB')
+        if (config.PERSISTENCE === 'MONGODB')
             filtered = cartById.productos.filter(p => p._id.toString() == productId);
         else
             filtered = cartById.productos.filter(p => p.id == productId);
@@ -120,7 +104,7 @@ router.delete('/:id/productos/:id_prod', async (req, res) => {
             return;
         }
 
-        if (process.env.PERSISTENCE === 'MONGODB')
+        if (config.PERSISTENCE === 'MONGODB')
             cartById.productos = cartById.productos.filter(p => p._id.toString() != productId);
         else
             cartById.productos = cartById.productos.filter(p => p.id != productId);

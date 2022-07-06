@@ -1,27 +1,9 @@
 import { Router } from 'express';
-import dotenv from "dotenv";
+import ProductosDaoMongoDB from '../daos/productos/ProductosDaoMongoDB.js';
 
 const router = Router();
-dotenv.config();
 
-export let productDao;
-
-if (process.env.PERSISTENCE === 'ARCHIVO') {
-    const { default: ProductosDaoArchivo } = await import('../daos/productos/ProductosDaoArchivo.js')
-    productDao = new ProductosDaoArchivo();
-}
-else if (process.env.PERSISTENCE === 'FIREBASE') {
-    const { default: ProductosDaoFirebase } = await import('../daos/productos/ProductosDaoFirebase.js');
-    productDao = new ProductosDaoFirebase(true);
-}
-else if (process.env.PERSISTENCE === 'MONGODB') {
-    const { default: ProductosDaoMongoDB } = await import('../daos/productos/ProductosDaoMongoDB.js');
-    productDao = new ProductosDaoMongoDB(true);
-}
-else if (process.env.PERSISTENCE === 'MEMORIA') {
-    const { default: ProductosDaoMemoria } = await import('../daos/productos/ProductosDaoMemoria.js');
-    productDao = new ProductosDaoMemoria();
-}
+export const productDao = new ProductosDaoMongoDB(true);
 
 router.get('/', async (req, res) => {
     try {

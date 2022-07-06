@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
+import config from '../../config.js'
 
-class ContenedorFirebase {
+class ContenedorMongoDB {
 
     constructor(model, isInitialized) {
         if (isInitialized) {
-            mongoose.connect("mongodb+srv://norber:CoderHouse33@cluster0.bpobi.mongodb.net/trabajo-final?retryWrites=true&w=majority", {
+            mongoose.connect(config.MONGO_CONNECTION_STRING, {
                 useNewUrlParser: true,
                 useUnifiedTopology: true
             });
@@ -95,4 +96,4 @@ class ContenedorFirebase {
     }
 }
 
-export default ContenedorFirebase;
+export default ContenedorMongoDB;
