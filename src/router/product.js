@@ -3,12 +3,11 @@ import ProductosDaoMongoDB from '../daos/productos/ProductosDaoMongoDB.js';
 import logger from '../logger/logger.js';
 
 const router = Router();
-
 export const productDao = new ProductosDaoMongoDB(true);
 
 router.get('/', async (req, res) => {
     try {
-        logger.info(`Ruta: ${req.protocol}://${req.get('host')}${req.url}, Method: ${req.method}`);
+        logger.info(`Ruta: ${req.protocol}://${req.get('host')}/api/productos${req.url}, Method: ${req.method}`);
         const allProducts = await productDao.getAll()
         res.send({ productos: allProducts });
     }
@@ -20,7 +19,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        logger.info(`Ruta: ${req.protocol}://${req.get('host')}${req.url}, Method: ${req.method}`);
+        logger.info(`Ruta: ${req.protocol}://${req.get('host')}/api/productos${req.url}, Method: ${req.method}`);
         const id = req.params.id;
         const productById = await productDao.getById(id);
         if (productById === null) {
@@ -49,7 +48,7 @@ function validateBodyAndAuthenticate(req, res, next) {
 
 router.post('/', validateBodyAndAuthenticate, async (req, res) => {
     try {
-        logger.info(`Ruta: ${req.protocol}://${req.get('host')}${req.url}, Method: ${req.method}`);
+        logger.info(`Ruta: ${req.protocol}://${req.get('host')}/api/productos${req.url}, Method: ${req.method}`);
         const product = req.body;
         let { invalidBody, isAdmin } = req;
         if (!isAdmin) {
@@ -77,7 +76,7 @@ router.post('/', validateBodyAndAuthenticate, async (req, res) => {
 
 router.put('/:id', validateBodyAndAuthenticate, async (req, res) => {
     try {
-        logger.info(`Ruta: ${req.protocol}://${req.get('host')}${req.url}, Method: ${req.method}`);
+        logger.info(`Ruta: ${req.protocol}://${req.get('host')}/api/productos${req.url}, Method: ${req.method}`);
         const product = req.body;
         const id = req.params.id;
         let { invalidBody, isAdmin } = req;
@@ -109,7 +108,7 @@ router.put('/:id', validateBodyAndAuthenticate, async (req, res) => {
 
 router.delete('/:id', validateBodyAndAuthenticate, async (req, res) => {
     try {
-        logger.info(`Ruta: ${req.protocol}://${req.get('host')}${req.url}, Method: ${req.method}`);
+        logger.info(`Ruta: ${req.protocol}://${req.get('host')}/api/productos${req.url}, Method: ${req.method}`);
         const id = req.params.id;
         let { isAdmin } = req;
         if (!isAdmin) {

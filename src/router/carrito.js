@@ -11,7 +11,7 @@ const cartDao = new CarritosDaoMongoDB(false);
 
 router.post('/', async (req, res) => {
     try {
-        logger.info(`Ruta: ${req.protocol}://${req.get('host')}${req.url}, Method: ${req.method}`);
+        logger.info(`Ruta: ${req.protocol}://${req.get('host')}/api/carrito${req.url}, Method: ${req.method}`);
         const cartToSave = { timestamp: Date.now(), productos: [] }
         const id = await cartDao.save(cartToSave);
         res.send({ idCarritoGuardado: id });
@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     try {
-        logger.info(`Ruta: ${req.protocol}://${req.get('host')}${req.url}, Method: ${req.method}`);
+        logger.info(`Ruta: ${req.protocol}://${req.get('host')}/api/carrito${req.url}, Method: ${req.method}`);
         const id = req.params.id;
         const idDeleted = await cartDao.deleteById(id);
         if (idDeleted === null) {
@@ -42,7 +42,7 @@ router.delete('/:id', async (req, res) => {
 
 router.post('/:id/productos/:id_prod', async (req, res) => {
     try {
-        logger.info(`Ruta: ${req.protocol}://${req.get('host')}${req.url}, Method: ${req.method}`);
+        logger.info(`Ruta: ${req.protocol}://${req.get('host')}/api/carrito${req.url}, Method: ${req.method}`);
         const cartId = req.params.id;
         const productId = req.params.id_prod;
 
@@ -78,7 +78,7 @@ router.post('/:id/productos/:id_prod', async (req, res) => {
 
 router.get('/:id/productos', async (req, res) => {
     try {
-        logger.info(`Ruta: ${req.protocol}://${req.get('host')}${req.url}, Method: ${req.method}`);
+        logger.info(`Ruta: ${req.protocol}://${req.get('host')}/api/carrito${req.url}, Method: ${req.method}`);
         const cartId = req.params.id;
         const cartById = await cartDao.getById(cartId);
         if (cartById === null) {
@@ -97,7 +97,7 @@ router.get('/:id/productos', async (req, res) => {
 
 router.delete('/:id/productos/:id_prod', async (req, res) => {
     try {
-        logger.info(`Ruta: ${req.protocol}://${req.get('host')}${req.url}, Method: ${req.method}`);
+        logger.info(`Ruta: ${req.protocol}://${req.get('host')}/api/carrito${req.url}, Method: ${req.method}`);
         const cartId = req.params.id;
         const productId = req.params.id_prod;
 

@@ -1,2 +1,4 @@
 {"level":"error","message":"ContenedorMongoDB-getById(). Error: CastError: Cast to ObjectId failed for value \"62c60717905ec01eaf881b3\" (type string) at path \"_id\" for model \"productos\""}
 {"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"Login: Credenciales incorrectas"}
+{"level":"error","message":"Login: Credenciales incorrectas"}

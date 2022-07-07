@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-const carritosCollection = "carritos";
+const carritosCollection = 'carritos';
 
 const carritosSchema = new mongoose.Schema({
     productos: { type: Array, required: true },

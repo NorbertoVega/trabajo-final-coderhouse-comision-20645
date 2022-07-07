@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-const productosCollection = "productos";
+const productosCollection = 'productos';
 
 const productosSchema = new mongoose.Schema({
     codigo: { type: String, required: true, max: 100 },
