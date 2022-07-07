@@ -1,5 +1,6 @@
 import admin from 'firebase-admin';
 import serviceAccount from '../../proyecto-final-bcf78-firebase-adminsdk-jhl9p-8075fc79ea.json';
+import logger from '../logger/logger';
 
 class ContenedorFirebase {
 
@@ -23,6 +24,7 @@ class ContenedorFirebase {
             return doc.id;
         }
         catch (error) {
+            logger.error(`ContenedorFirebase-save(). Error: ${error}`);
             throw new Error(`Hubo un problema en save(): ${error.message}`);
         }
     }
@@ -38,7 +40,7 @@ class ContenedorFirebase {
                 return null;
         }
         catch (error) {
-            console.log(error);
+            logger.error(`ContenedorFirebase-getById(). Error: ${error}`);
             return null;
         }
     }
@@ -53,6 +55,7 @@ class ContenedorFirebase {
             return response;
         }
         catch (error) {
+            logger.error(`ContenedorFirebase-getAll(). Error: ${error}`);
             throw new Error(`Hubo un problema en getAll(): ${error.message}`)
         }
     }
@@ -69,7 +72,7 @@ class ContenedorFirebase {
                 return null;
         }
         catch (error) {
-            console.log(error);
+            logger.error(`ContenedorFirebase-deleteById(). Error: ${error}`);
             return null;
         }
     }
@@ -82,7 +85,7 @@ class ContenedorFirebase {
             }
         }
         catch (error) {
-            console.log(error);
+            logger.error(`ContenedorFirebase-deleteAll(). Error: ${error}`);
             throw new Error(`Hubo un problema en deleteAll(): ${error.message}`)
         }
     }
@@ -99,7 +102,7 @@ class ContenedorFirebase {
                 return null;
         }
         catch (error) {
-            console.log(error);
+            logger.error(`ContenedorFirebase-updateById(). Error: ${error}`);
             return null;
         }
     }

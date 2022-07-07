@@ -2,32 +2,33 @@ import server from './src/app.js';
 import config from './config.js';
 import cluster from 'cluster';
 import os from 'os';
+import logger from './src/logger/logger.js';
 
 function createServer() {
     server.listen(config.PORT, () => {
-        console.log(`Listening at port ${config.PORT}`);
+        logger.info(`Listening at port ${config.PORT}`);
     });
 }
 
 const numCpus = os.cpus().length;
 const modo = config.MODO;
-console.log('Modo:', modo);
+logger.info(`modo: ${modo}`);
 
 if (modo === 'FORK')
     createServer();
 
 else if (modo === 'CLUSTER') {
     if (cluster.isMaster) {
-        console.log(`Master process ${process.pid}`);
+        logger.info(`Master process ${process.pid}`);
         for (let i = 0; i < numCpus; i++) {
             cluster.fork();
         }
         cluster.on("listening", (worker, address) => {
-            console.log(`${worker.process.pid} is listening at port ${address.port}`);
+            logger.info(`${worker.process.pid} is listening at port ${address.port}`);
         })
     }
     else {
         createServer();
-        console.log(`worker ${process.pid} started`);
+        logger.info(`worker ${process.pid} started`);
     }
 }

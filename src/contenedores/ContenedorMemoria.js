@@ -1,3 +1,5 @@
+import logger from "../logger/logger";
+
 class ContenedorMemoria {
 
     constructor() {
@@ -13,6 +15,7 @@ class ContenedorMemoria {
             return productToSave.id;
         }
         catch (error) {
+            logger.error(`ContenedorMemoria-save(). Error: ${error}`);
             throw new Error(`Hubo un problema en save(): ${error.message}`);
         }
     }
@@ -28,7 +31,7 @@ class ContenedorMemoria {
             }
         }
         catch (error) {
-            console.log(error);
+            logger.error(`ContenedorMemoria-getById(). Error: ${error}`);
             return null;
         }
     }
@@ -38,6 +41,7 @@ class ContenedorMemoria {
             return this.items;
         }
         catch (error) {
+            logger.error(`ContenedorMemoria-getAll(). Error: ${error}`);
             throw new Error(`Hubo un problema en getAll(): ${error.message}`)
         }
     }
@@ -54,7 +58,7 @@ class ContenedorMemoria {
             }
         }
         catch (error) {
-            console.log(error);
+            logger.error(`ContenedorMemoria-deleteById(). Error: ${error}`);
             return null;
         }
     }
@@ -71,7 +75,7 @@ class ContenedorMemoria {
             }
         }
         catch (error) {
-            console.log(error);
+            logger.error(`ContenedorMemoria-updateById(). Error: ${error}`);
             return null;
         }
     }
@@ -81,7 +85,7 @@ class ContenedorMemoria {
             this.items = [];
         }
         catch (error) {
-            console.log(error);
+            logger.error(`ContenedorMemoria-deleteAll(). Error: ${error}`);
             throw new Error(`Hubo un problema en deleteAll(): ${error.message}`)
         }
     }

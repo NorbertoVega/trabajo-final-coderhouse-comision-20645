@@ -1,5 +1,6 @@
-import mongoose from "mongoose";
-import config from '../../config.js'
+import mongoose from 'mongoose';
+import config from '../../config.js';
+import logger from '../logger/logger.js';
 
 class ContenedorMongoDB {
 
@@ -9,7 +10,7 @@ class ContenedorMongoDB {
                 useNewUrlParser: true,
                 useUnifiedTopology: true
             });
-            console.log("Conectado a MongoDb");
+            logger.info(`ContenedorMongoDB-constructor(): Conectado a MongoDb`);   
         }
 
         this.model = model;
@@ -22,6 +23,7 @@ class ContenedorMongoDB {
             return objectToInsert._id.toString();
         }
         catch (error) {
+            logger.error(`ContenedorMongoDB-save(). Error: ${error}`);
             throw new Error(`Hubo un problema en save(): ${error.message}`)
         }
     }
@@ -35,7 +37,7 @@ class ContenedorMongoDB {
                 return null;
         }
         catch (error) {
-            console.log(error);
+            logger.error(`ContenedorMongoDB-getById(). Error: ${error}`);
             return null;
         }
     }
@@ -46,6 +48,7 @@ class ContenedorMongoDB {
             return response;
         }
         catch (error) {
+            logger.error(`ContenedorMongoDB-getAll(). Error: ${error}`);
             throw new Error(`Hubo un problema en getAll(): ${error.message}`)
         }
     }
@@ -61,7 +64,7 @@ class ContenedorMongoDB {
                 return null;
         }
         catch (error) {
-            console.log(error);
+            logger.error(`ContenedorMongoDB-deleteById(). Error: ${error}`);
             return null;
         }
     }
@@ -74,7 +77,7 @@ class ContenedorMongoDB {
             }
         }
         catch (error) {
-            console.log(error);
+            logger.error(`ContenedorMongoDB-deleteAll(). Error: ${error}`);
             throw new Error(`Hubo un problema en deleteAll(): ${error.message}`)
         }
     }
@@ -90,7 +93,7 @@ class ContenedorMongoDB {
                 return null;
         }
         catch (error) {
-            console.log(error);
+            logger.error(`ContenedorMongoDB-updateById(). Error: ${error}`);
             return null;
         }
     }
