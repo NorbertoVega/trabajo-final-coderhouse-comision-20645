@@ -9,6 +9,7 @@ import bcrypt from 'bcrypt';
 import config from '../../config.js';
 import UsuariosDaoMongoDB from '../daos/usuarios/UsuariosDaoMongoDB.js';
 import logger from '../logger/logger.js';
+import { sendEmail } from '../utils/mailSender.js';
 
 const LocalStrategy = Strategy;
 const router = express();
@@ -107,7 +108,10 @@ router.post('/registro', async (req, res) => {
             if (!hashedPassword)
                 res.send({ result: 'ERROR', message: 'Error al generar registro. Hubo un problema al hashear la password.' });
             else {
-                usuariosDao.save({ email, password: hashedPassword, nombre, direccion, edad, telefono, urlAvatarImage })
+                usuariosDao.save({ email, password: hashedPassword, nombre, direccion, edad, telefono, urlAvatarImage });
+                const subjectString = `Nuevo registro`;
+                const bodyString = `<p>Nombre: ${nombre}</p><br><p>Email: ${email}</p><br><P>Dirección: ${direccion}</P>`;
+                await sendEmail(bodyString, subjectString, config.ADMIN_EMAIL);
                 res.send({ result: 'SUCCESS', message: 'Usuario registrado correctamente.' });
             }
         }

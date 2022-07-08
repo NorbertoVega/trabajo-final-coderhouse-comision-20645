@@ -6,8 +6,7 @@ import logger from '../logger/logger.js';
 const router = Router();
 
 const { productDao } = await import('./product.js');
-const cartDao = new CarritosDaoMongoDB(false);
-
+export const cartDao = new CarritosDaoMongoDB(false);
 
 router.post('/', async (req, res) => {
     try {

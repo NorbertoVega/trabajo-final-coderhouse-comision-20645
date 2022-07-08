@@ -2,3 +2,6 @@
 {"level":"warn","message":"Ruta: http://localhost:8080/loginsuccess, Method: GET"}
 {"level":"warn","message":"Ruta: http://localhost:8080/loginsuccess, Method: GET"}
 {"level":"warn","message":"Ruta: http://localhost:8080/loginsuccess, Method: GET"}
+{"level":"warn","message":"Ruta: http://localhost:8080/api/checkout/62c60748905ec01eaf881b40, Method: POST"}
+{"level":"warn","message":"Ruta: http://localhost:8080/api/checkout/62c60748905ec01eaf881b40, Method: POST"}
+{"level":"warn","message":"Ruta: http://localhost:8080/api/checkout/62c60748905ec01eaf881b40, Method: POST"}

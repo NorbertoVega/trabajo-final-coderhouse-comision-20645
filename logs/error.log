@@ -2,3 +2,4 @@
 {"level":"error","message":"Producto no encontrado."}
 {"level":"error","message":"Login: Credenciales incorrectas"}
 {"level":"error","message":"Login: Credenciales incorrectas"}
+{"level":"error","message":"EmailSender: error al enviar email: Error: ENOENT: no such file or directory, open 'C:\\Users\\ale_m\\OneDrive\\Documents\\Coderhouse\\Backend\\Entregables\\trabajo-final\\perro.jpg'"}
