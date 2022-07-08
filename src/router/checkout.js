@@ -16,7 +16,7 @@ router.post('/:id_cart', async (req, res) => {
         const email = req.body.email;
         const cart = await cartDao.getById(idCart);
 
-        const subjectString = `Nuevo pedido de Norberto. Email: norberto.a.vega@gmail.com`;
+        const subjectString = `Nuevo pedido de ${nombre}. Email: ${email}`;
         
         let bodyString = `<h1>Productos</h1><br>`;
         

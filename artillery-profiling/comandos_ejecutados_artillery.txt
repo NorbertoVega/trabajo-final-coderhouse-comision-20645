@@ -1,0 +1,19 @@
+/* Artillery */
+npm i -g artillery
+
+En el .env MODO debe estar en modo FORK
+node --prof server.js 
+En otra terminal ejecutar:
+artillery quick --count 20 -n 50 "http://localhost:8080/api/productos" > result_fork.txt
+frenar el server (ctrl + c)
+renombrar el isolate a fork-v8.log
+
+En el .env MODO debe estar en modo CLUSTER
+node --prof server.js 
+En otra terminal ejecutar:
+artillery quick --count 20 -n 50 "http://localhost:8080/api/productos" > result_cluster.txt
+frenar el server (ctrl + c)
+renombrar el isolate a cluster-v8.log
+
+node --prof-process fork-v8.log > result_prof-fork.txt
+node --prof-process cluster-v8.log > result_prof-cluster.txt

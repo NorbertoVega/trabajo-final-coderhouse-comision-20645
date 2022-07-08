@@ -1,5 +1,6 @@
 import twilio from 'twilio';
 import config from '../../config.js';
+import logger from '../logger/logger.js';
 
 const client = new twilio(config.ACCOUNT_SID_TWILIO, config.AUTH_TOKEN_TWILIO);
 
@@ -11,6 +12,6 @@ export async function sendWhatsApp(userTelephoneNumber, nombre, email) {
         from: `whatsapp:${config.WHATSAPP_ADMIN_TELEPHONE_NUMBER}`,
         to: `whatsapp:+549${userTelephoneNumber}`
     })
-    .then(message => console.log(message.sid))
+    .then(message => logger.info(`Whatsapp enviado correctamente. Id mensaje: ${message.sid}`))
     .done();
 }
