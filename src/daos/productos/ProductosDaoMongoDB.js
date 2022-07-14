@@ -3,8 +3,8 @@ import { ProductoModel } from '../../contenedores/mongooseModels/ProductoModel.j
 
 class ProductosDaoMongoDB extends ContenedorMongoDB {
 
-    constructor(isInitialized) {
-        super(ProductoModel, isInitialized);
+    constructor() {
+        super(ProductoModel);
     }
 }
 

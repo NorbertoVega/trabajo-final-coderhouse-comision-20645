@@ -1,13 +1,21 @@
-import server from './src/app.js';
-import config from './config.js';
+import express from 'express';
 import cluster from 'cluster';
+import router from './router/index.js';
+import config from '../config.js';
 import os from 'os';
-import logger from './src/logger/logger.js';
+import logger from './logger/logger.js';
+
+const app = express();
+
+app.use('/api', router);
+app.use(express.urlencoded({ extended: true }));
 
 function createServer() {
-    server.listen(config.PORT, () => {
+    app.listen(config.PORT, () => {
         logger.info(`Listening at port ${config.PORT}`);
     });
+
+    app.on("error", (error) => console.error(`Error en servidor`, error));
 }
 
 const numCpus = os.cpus().length;

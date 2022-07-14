@@ -1,18 +1,8 @@
-import mongoose from 'mongoose';
-import config from '../../config.js';
 import logger from '../logger/logger.js';
 
 class ContenedorMongoDB {
 
-    constructor(model, isInitialized) {
-        if (isInitialized) {
-            mongoose.connect(config.MONGO_CONNECTION_STRING, {
-                useNewUrlParser: true,
-                useUnifiedTopology: true
-            });
-            logger.info(`ContenedorMongoDB-constructor(): Conectado a MongoDb`);   
-        }
-
+    constructor(model) {
         this.model = model;
     }
 

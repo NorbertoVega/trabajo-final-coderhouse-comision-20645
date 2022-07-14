@@ -23,7 +23,7 @@ export async function sendEmail(body, subjectString, email) {
 
    try {
       const info = await transporter.sendMail(mailOptions)
-      logger.info(`EmailSender: transporter.sendMail() response: ${info}`);
+      logger.info(`EmailSender: transporter.sendMail() response: ${JSON.stringify(info)}`);
    }
    catch (error) {
       logger.error(`EmailSender: error al enviar email: ${error}`)

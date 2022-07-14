@@ -3,3 +3,18 @@
 {"level":"error","message":"Login: Credenciales incorrectas"}
 {"level":"error","message":"Login: Credenciales incorrectas"}
 {"level":"error","message":"EmailSender: error al enviar email: Error: ENOENT: no such file or directory, open 'C:\\Users\\ale_m\\OneDrive\\Documents\\Coderhouse\\Backend\\Entregables\\trabajo-final\\perro.jpg'"}
+{"level":"error","message":"Sessionstatus: Error al obtener el status de autenticación. Error: ReferenceError: next is not defined"}
+{"level":"error","message":"Logout: Error al desloguearse. Error: TypeError: Cannot read properties of undefined (reading 'email')"}
+{"level":"error","message":"Logout: Error al desloguearse. Error: TypeError: Cannot read properties of undefined (reading 'email')"}
+{"level":"error","message":"Logout: Error al desloguearse. Error: TypeError: Cannot read properties of undefined (reading 'email')"}
+{"level":"error","message":"Logout: Error al desloguearse. Error: TypeError: Cannot read properties of undefined (reading 'email')"}
+{"level":"error","message":"Logout: Error al desloguearse. Error: TypeError: Cannot read properties of undefined (reading 'email')"}
+{"level":"error","message":"ContenedorMongoDB-getById(). Error: CastError: Cast to ObjectId failed for value \"62c60717905ec01eaf881b3af\" (type string) at path \"_id\" for model \"productos\""}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"No se pudo agregar al carrito. Producto no encontrado."}
+{"level":"error","message":"Error al agregar producto al carrito: ReferenceError: cartId is not defined"}
+{"level":"error","message":"Error al agregar producto al carrito: ReferenceError: cartId is not defined"}
+{"level":"error","message":"No se pudo eliminar del carrito. Producto no encontrado."}
+{"level":"error","message":"No se pudo eliminar del carrito. Producto no encontrado."}
+{"level":"error","message":"Login: Credenciales incorrectas"}

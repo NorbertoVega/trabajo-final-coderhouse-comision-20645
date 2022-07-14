@@ -1,27 +1,28 @@
-import { Router } from 'express';
-import ProductosDaoMongoDB from '../daos/productos/ProductosDaoMongoDB.js';
 import logger from '../logger/logger.js';
+import { 
+    getAllProductsService,
+    getProductoByIdService,
+    saveProductService,
+    updateProductByIdService,
+    deleteProductByIdService } from '../services/producto.service.js';
 
-const router = Router();
-export const productDao = new ProductosDaoMongoDB(true);
-
-router.get('/', async (req, res) => {
+export async function getProductosController(req, res) {
     try {
         logger.info(`Ruta: ${req.protocol}://${req.get('host')}/api/productos${req.url}, Method: ${req.method}`);
-        const allProducts = await productDao.getAll()
+        const allProducts = await getAllProductsService();
         res.send({ productos: allProducts });
     }
     catch (err) {
         logger.error(`Error al otener todos los productos: ${err}`);
         res.status(400).send(err);
     }
-});
+}
 
-router.get('/:id', async (req, res) => {
+export async function getProductoByIdController(req, res) {
     try {
         logger.info(`Ruta: ${req.protocol}://${req.get('host')}/api/productos${req.url}, Method: ${req.method}`);
         const id = req.params.id;
-        const productById = await productDao.getById(id);
+        const productById = await getProductoByIdService(id);
         if (productById === null) {
             logger.error('Producto no encontrado.');
             res.status(404).send({ error: -4, descripcion: 'Producto no encontrado.' });
@@ -33,20 +34,9 @@ router.get('/:id', async (req, res) => {
         logger.error(`Error al obtener producto: ${err}`);
         res.status(400).send(err);
     }
-});
-
-function validateBodyAndAuthenticate(req, res, next) {
-    const body = req.body;
-    req.invalidBody = body.nombre == null || body.descripcion == null || body.codigo == null ||
-        body.url == null || body.precio == null || body.stock == null;
-
-    if (body.admin != null && body.admin != undefined)
-        req.isAdmin = body.admin;
-
-    next();
 }
 
-router.post('/', validateBodyAndAuthenticate, async (req, res) => {
+export async function saveProductController(req, res) {
     try {
         logger.info(`Ruta: ${req.protocol}://${req.get('host')}/api/productos${req.url}, Method: ${req.method}`);
         const product = req.body;
@@ -63,7 +53,7 @@ router.post('/', validateBodyAndAuthenticate, async (req, res) => {
         }
         delete product.admin;
         const productToSave = { ...product, timestamp: Date.now() }
-        const id = await productDao.save(productToSave);
+        const id = await saveProductService(productToSave);
 
         res.send({ idProductoGuardado: id });
 
@@ -72,9 +62,9 @@ router.post('/', validateBodyAndAuthenticate, async (req, res) => {
         logger.error(`Error al agregar producto: ${err}`);
         res.status(400).send(err);
     }
-});
+}
 
-router.put('/:id', validateBodyAndAuthenticate, async (req, res) => {
+export async function updateProductController(req, res) {
     try {
         logger.info(`Ruta: ${req.protocol}://${req.get('host')}/api/productos${req.url}, Method: ${req.method}`);
         const product = req.body;
@@ -92,7 +82,7 @@ router.put('/:id', validateBodyAndAuthenticate, async (req, res) => {
         }
         delete product.admin;
         const productToUpdate = { ...product, timestamp: Date.now() }
-        const idUpdated = await productDao.updateById(id, productToUpdate);
+        const idUpdated = await updateProductByIdService(id, productToUpdate);
         if (idUpdated !== null) {
             res.send({ idProductoActualizado: idUpdated })
             return;
@@ -104,9 +94,9 @@ router.put('/:id', validateBodyAndAuthenticate, async (req, res) => {
         logger.error(`Error al actualizar producto: ${err}`);
         res.status(400).send(err);
     }
-});
+}
 
-router.delete('/:id', validateBodyAndAuthenticate, async (req, res) => {
+export async function deleteProductController(req, res) {
     try {
         logger.info(`Ruta: ${req.protocol}://${req.get('host')}/api/productos${req.url}, Method: ${req.method}`);
         const id = req.params.id;
@@ -116,7 +106,7 @@ router.delete('/:id', validateBodyAndAuthenticate, async (req, res) => {
             res.status(403).send({ error: -1, descripcion: 'Ruta: /api/productos método:DELETE no autorizada.' });
             return;
         }
-        const idDeleted = await productDao.deleteById(id);
+        const idDeleted = await deleteProductByIdService(id);
         if (idDeleted === null) {
             logger.error('Producto no encontrado. No se pudo eliminar.');
             res.status(404).send({ error: -4, descripcion: 'Producto no encontrado. No se pudo eliminar.' });
@@ -128,6 +118,4 @@ router.delete('/:id', validateBodyAndAuthenticate, async (req, res) => {
         logger.error(`Error al eliminar producto: ${err}`);
         res.status(400).send(err);
     }
-});
-
-export default router;
+}
