@@ -7,12 +7,12 @@ import logger from '../logger/logger.js';
 import checkout from './checkout.js';
 import { initializePassport } from '../utils/initPassport.js';
 import { isAuth } from '../middleware/auth.js';
-import { connectToMongoDB } from '../utils/connectToDB.js';
+import { initializePersistence } from '../utils/connectToDB.js';
 
 const router = Router();
 router.use(express.json());
 
-connectToMongoDB();
+initializePersistence();
 initializePassport(router);
 
 router.use('/usuario', usuario);

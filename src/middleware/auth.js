@@ -1,6 +1,7 @@
+import config from "../../config.js";
 
 export function isAuth(req, res, next) {
-    if (req.isAuthenticated()) {
+    if (config.PERSISTENCE == 'MEMORIA' || config.PERSISTENCE == 'ARCHIVO' || req.isAuthenticated()) {
         next();
     }
     else {

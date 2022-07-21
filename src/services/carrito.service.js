@@ -1,22 +1,22 @@
-import CarritosDaoMongoDB from '../daos/carritos/CarritosDaoMongoDB.js';
+import CarritosRepo from '../repository/carritos.repository.js';
 import config from '../../config.js';
 
-export const cartDao = new CarritosDaoMongoDB();
+const cartRepo = new CarritosRepo();
 
 export async function guardarCarritoService(cartToSave) {
-    return await cartDao.save(cartToSave);
+    return await cartRepo.save(cartToSave);
 }
 
 export async function borrarCarritoService(id) {
-    return await cartDao.deleteById(id);
+    return await cartRepo.deleteById(id);
 }
 
 export async function getCarritoByIdService(cartId) {
-    return await cartDao.getById(cartId);
+    return await cartRepo.getById(cartId);
 }
 
 export async function updateCarritoByIdService(cartId, cart) {
-    return await cartDao.updateById(cartId, cart);
+    return await cartRepo.updateById(cartId, cart);
 }
 
 export async function productoExisteEnCarritoService(cart, productId) {
@@ -37,6 +37,6 @@ export async function borrarProductoDelCarritoService(cart, cartId, productId) {
     else
         cart.productos = cart.productos.filter(p => p.id != productId);
         
-    return await cartDao.updateById(cartId, cart);
+    return await cartRepo.updateById(cartId, cart);
 }
 

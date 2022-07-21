@@ -10,6 +10,9 @@ import logger from '../logger/logger.js';
 
 export function initializePassport(router) {
 
+    if (config.PERSISTENCE == 'MEMORIA' || config.PERSISTENCE == 'ARCHIVO')
+        return;
+
     const LocalStrategy = Strategy;
 
     const MongoStore = connectMongo.create({

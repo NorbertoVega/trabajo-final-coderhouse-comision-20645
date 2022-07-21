@@ -1,23 +1,23 @@
-import ProductosDaoMongoDB from "../daos/productos/ProductosDaoMongoDB.js";
+import ProductosRepo from "../repository/productos.repository.js";
 
-export const productDao = new ProductosDaoMongoDB();
+const productRepo = new ProductosRepo();
 
 export async function getAllProductsService() {
-    return await productDao.getAll();
+    return await productRepo.getAll();
 }
 
 export async function getProductoByIdService(id) {
-    return await productDao.getById(id);
+    return await productRepo.getById(id);
 }
 
 export async function saveProductService(productToSave) {
-    return await productDao.save(productToSave);
+    return await productRepo.save(productToSave);
 }
 
 export async function updateProductByIdService(id, productToUpdate) {
-    return await productDao.updateById(id, productToUpdate);
+    return await productRepo.updateById(id, productToUpdate);
 }
 
 export async function deleteProductByIdService(id) {
-    return productDao.deleteById(id);
+    return productRepo.deleteById(id);
 }

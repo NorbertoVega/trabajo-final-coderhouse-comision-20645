@@ -1,10 +1,18 @@
 import dotenv from 'dotenv';
+import parseArgs from 'minimist';
+
 dotenv.config();
+const args = parseArgs(process.argv.slice(2));
+
+function getPersistenceFromArgs() {
+    if (args.persistence)
+        return args.persistence.toString().toUpperCase();
+}
 
 const config = {
     PORT: process.env.PORT || 8080,
     MODO: process.env.MODO || 'FORK',
-    PERSISTENCE: process.env.PERSISTENCE,
+    PERSISTENCE: getPersistenceFromArgs(),
     MONGO_CONNECTION_STRING: process.env.MONGO_CONNECTION_STRING,
     MONGO_TTL_SESSIONS: process.env.MONGO_TTL_SESSIONS,
     SESSION_SECRET: process.env.SESSION_SECRET,

@@ -15,7 +15,7 @@ function createServer() {
         logger.info(`Listening at port ${config.PORT}`);
     });
 
-    app.on("error", (error) => console.error(`Error en servidor`, error));
+    app.on("error", (error) => logger.error(`Error en servidor`, error));
 }
 
 const numCpus = os.cpus().length;
