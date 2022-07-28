@@ -26,3 +26,45 @@
 {"level":"error","message":"No se pudieron obtener los productos. Carrito no encontrado."}
 {"level":"error","message":"No se pudieron obtener los productos. Carrito no encontrado."}
 {"level":"error","message":"No se pudieron obtener los productos. Carrito no encontrado."}
+{"level":"error","message":"Ruta: /api/productos método:POST no autorizada."}
+{"level":"error","message":"Ruta: /api/productos método:POST no autorizada."}
+{"level":"error","message":"Ruta: /api/productos método:POST no autorizada."}
+{"level":"error","message":"Ruta: /api/productos método:DELETE no autorizada."}
+{"level":"error","message":"Ruta: /api/productos método:DELETE no autorizada."}
+{"level":"error","message":"Ruta: /api/productos método:DELETE no autorizada."}
+{"level":"error","message":"Ruta: /api/productos método:DELETE no autorizada."}
+{"level":"error","message":"ContenedorMongoDB-getById(). Error: CastError: Cast to ObjectId failed for value \"1\" (type string) at path \"_id\" for model \"productos\""}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"ContenedorMongoDB-getById(). Error: CastError: Cast to ObjectId failed for value \"1\" (type string) at path \"_id\" for model \"productos\""}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"ContenedorMongoDB-getById(). Error: CastError: Cast to ObjectId failed for value \"1\" (type string) at path \"_id\" for model \"productos\""}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"ContenedorMongoDB-getById(). Error: CastError: Cast to ObjectId failed for value \"1\" (type string) at path \"_id\" for model \"productos\""}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"Ruta: /api/productos método:POST no autorizada."}
+{"level":"error","message":"ContenedorMongoDB-getById(). Error: CastError: Cast to ObjectId failed for value \"1\" (type string) at path \"_id\" for model \"productos\""}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"Ruta: /api/productos método:POST no autorizada."}
+{"level":"error","message":"Producto a agregar con formato inválido."}
+{"level":"error","message":"ContenedorMongoDB-getById(). Error: CastError: Cast to ObjectId failed for value \"1\" (type string) at path \"_id\" for model \"productos\""}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"Ruta: /api/productos método:POST no autorizada."}
+{"level":"error","message":"Producto a agregar con formato inválido."}
+{"level":"error","message":"Ruta: /api/productos método:POST no autorizada."}
+{"level":"error","message":"ContenedorMongoDB-getById(). Error: CastError: Cast to ObjectId failed for value \"1\" (type string) at path \"_id\" for model \"productos\""}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"Ruta: /api/productos método:POST no autorizada."}
+{"level":"error","message":"Producto a agregar con formato inválido."}
+{"level":"error","message":"ContenedorMongoDB-getById(). Error: CastError: Cast to ObjectId failed for value \"1\" (type string) at path \"_id\" for model \"productos\""}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"Ruta: /api/productos método:POST no autorizada."}
+{"level":"error","message":"Producto a agregar con formato inválido."}
+{"level":"error","message":"Producto no encontrado. No se pudo actualizar."}
+{"level":"error","message":"ContenedorMongoDB-getById(). Error: CastError: Cast to ObjectId failed for value \"1\" (type string) at path \"_id\" for model \"productos\""}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"Ruta: /api/productos método:POST no autorizada."}
+{"level":"error","message":"Producto a agregar con formato inválido."}
+{"level":"error","message":"ContenedorMongoDB-getById(). Error: CastError: Cast to ObjectId failed for value \"1\" (type string) at path \"_id\" for model \"productos\""}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"Ruta: /api/productos método:POST no autorizada."}
+{"level":"error","message":"Producto a agregar con formato inválido."}

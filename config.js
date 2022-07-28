@@ -23,7 +23,8 @@ const config = {
     TWILIO_TELEPHONE_NUMBER: process.env.TWILIO_TELEPHONE_NUMBER,
     EMAIL_SENDER: process.env.EMAIL_SENDER,
     PASSWORD_EMAIL_SENDER: process.env.PASSWORD_EMAIL_SENDER,
-    ADMIN_EMAIL: process.env.ADMIN_EMAIL
+    ADMIN_EMAIL: process.env.ADMIN_EMAIL,
+    TEST: process.env.TEST
 }
 
 export default config;
