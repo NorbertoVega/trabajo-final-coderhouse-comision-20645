@@ -10,12 +10,12 @@
 			"name": "Productos",
 			"item": [
 				{
-					"name": "api/productos",
+					"name": "api/producto",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/productos",
+							"raw": "http://localhost:8080/api/producto",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -23,19 +23,19 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"productos"
+								"producto"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "api/productos/:id",
+					"name": "api/producto/:id",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/productos/62c60717905ec01eaf881b3a",
+							"raw": "http://localhost:8080/api/producto/62c60717905ec01eaf881b3a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -43,7 +43,7 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"productos",
+								"producto",
 								"62c60717905ec01eaf881b3a"
 							]
 						}
@@ -51,13 +51,13 @@
 					"response": []
 				},
 				{
-					"name": "api/productos",
+					"name": "api/producto",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Motherboard Mother Asus Prime A320m-k\",\r\n    \"descripcion\": \"Motherboard Mother Asus Prime A320m-k *|*|*|*|*|*|*|*|*|*|*|*|*|*|*|***\",\r\n    \"codigo\": \"123151648\",\r\n    \"url\": \"https://http2.mlstatic.com/D_NQ_NP_2X_814476-MLA47101074241_082021-F.webp\",\r\n    \"precio\": 35860,\r\n    \"stock\": 25,\r\n    \"admin\": true\r\n}",
+							"raw": "{\r\n    \"nombre\": \"Mouse Genius\",\r\n    \"descripcion\": \"Motherboard Mother Asus Prime A320m-k ////////////\",\r\n    \"codigo\": \"123151648\",\r\n    \"url\": \"https://http2.mlstatic.com/D_NQ_NP_2X_814476-MLA47101074241_082021-F.webp\",\r\n    \"precio\": 3860,\r\n    \"stock\": 25,\r\n    \"admin\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -65,7 +65,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/productos",
+							"raw": "http://localhost:8080/api/producto",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -73,20 +73,20 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"productos"
+								"producto"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "api/productos/:id",
+					"name": "api/producto/:id",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Monitor Noblex C24RG5\",\r\n    \"descripcion\": \"Monitor Samsung |||||||***||||||||||||||||\",\r\n    \"codigo\": \"123151648\",\r\n    \"url\": \"https://http2.mlstatic.com/D_NQ_NP_2X_896735-MLA45212708765_032021-F.webp\",\r\n    \"precio\": 70588,\r\n    \"stock\": 24,\r\n    \"admin\": true\r\n}",
+							"raw": "{\r\n    \"nombre\": \"Monitor Noblex C24RG5\",\r\n    \"descripcion\": \"Monitor Samsung \",\r\n    \"codigo\": \"123151648\",\r\n    \"url\": \"https://http2.mlstatic.com/D_NQ_NP_2X_896735-MLA45212708765_032021-F.webp\",\r\n    \"precio\": 70588,\r\n    \"stock\": 24,\r\n    \"admin\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -94,7 +94,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/productos/62c60717905ec01eaf881b3a",
+							"raw": "http://localhost:8080/api/producto/62c60717905ec01eaf881b3a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -102,7 +102,7 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"productos",
+								"producto",
 								"62c60717905ec01eaf881b3a"
 							]
 						}
@@ -110,7 +110,7 @@
 					"response": []
 				},
 				{
-					"name": "api/productos/:id",
+					"name": "api/producto/:id",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -124,7 +124,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/productos/4",
+							"raw": "http://localhost:8080/api/producto/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -132,7 +132,7 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"productos",
+								"producto",
 								"4"
 							]
 						}
@@ -194,7 +194,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/carrito/3",
+							"raw": "http://localhost:8080/api/carrito/62cfaa35f125f43cb526440e",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -203,7 +203,7 @@
 							"path": [
 								"api",
 								"carrito",
-								"3"
+								"62cfaa35f125f43cb526440e"
 							]
 						}
 					},
@@ -266,7 +266,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"email\": \"norberto.a.vega@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"nombre\": \"Norberto\",\r\n    \"direccion\":\"Fake Street 123\",\r\n    \"edad\": 33,\r\n    \"telefono\": 555555,\r\n    \"urlAvatarImage\": \"https://cdn.icon-icons.com/icons2/1736/PNG/512/4043260-avatar-male-man-portrait_113269.png\" }",
+							"raw": "{ \r\n    \"email\": \"connie.blanda37@ethereal.email\",\r\n    \"password\": \"1234\",\r\n    \"nombre\": \"Connie\",\r\n    \"direccion\":\"Fake Street 123\",\r\n    \"edad\": 33,\r\n    \"telefono\": 555555,\r\n    \"urlAvatarImage\": \"https://cdn.icon-icons.com/icons2/1736/PNG/512/4043260-avatar-male-man-portrait_113269.png\" }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -415,6 +415,138 @@
 								"api",
 								"checkout",
 								"62c60748905ec01eaf881b40"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "client-test",
+			"item": [
+				{
+					"name": "add product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Test product 2\",\r\n    \"descripcion\": \"Motherboard Mother Asus Prime A320m-k ////////////\",\r\n    \"codigo\": \"123151648\",\r\n    \"url\": \"https://http2.mlstatic.com/D_NQ_NP_2X_814476-MLA47101074241_082021-F.webp\",\r\n    \"precio\": 3860,\r\n    \"stock\": 25,\r\n    \"admin\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/productos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"admin\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/productos/62e20cd10cf7d42e89656923",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productos",
+								"62e20cd10cf7d42e89656923"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Test product 2 changed\",\r\n    \"descripcion\": \"Motherboard Mother Asus Prime A320m-k ////////////\",\r\n    \"codigo\": \"123151648\",\r\n    \"url\": \"https://http2.mlstatic.com/D_NQ_NP_2X_814476-MLA47101074241_082021-F.webp\",\r\n    \"precio\": 3860,\r\n    \"stock\": 25,\r\n    \"admin\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/productos/62e31d9cf7b07097ee30b3ac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productos",
+								"62e31d9cf7b07097ee30b3ac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/productos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/productos/62c60717905ec01eaf881b3a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productos",
+								"62c60717905ec01eaf881b3a"
 							]
 						}
 					},
