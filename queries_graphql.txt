@@ -1,0 +1,68 @@
+
+query {
+  getProducts {
+    _id
+    nombre
+	precio
+	stock
+	codigo
+  }
+}
+
+query {
+  getProduct(_id: "62c60717905ec01eaf881b3a") {
+    _id
+    nombre
+	  descripcion
+  }
+}
+
+query {
+  getProducts {
+    _id
+    nombre
+    timestamp
+  }
+}
+
+mutation {
+  saveProduct(codigo:"aa7897999", 
+				descripcion:"some description",
+				nombre:"Gabinete Cooler Noga 8609",
+				precio: 5600,
+				stock: 40,
+				url: "https://http2.mlstatic.com/D_NQ_NP_2X_698511-MLA28912700817_122018-F.webp") {
+    _id
+    nombre
+  }
+}
+
+mutation {
+  updateProduct(idToUpdate: "62ec7725fe564085144d6a81",
+				codigo:"aa7897999", 
+				descripcion:"some description updated",
+				nombre:"Gabinete Cooler Noga 8609",
+				precio: 5600,
+				stock: 40,
+				url: "https://http2.mlstatic.com/D_NQ_NP_2X_698511-MLA28912700817_122018-F.webp") {
+    _id
+    nombre
+		descripcion
+  }
+}
+
+mutation {
+  deleteProduct(_id: "62ec7725fe564085144d6a81") {
+    _id
+  }
+}
+
+query {
+  getProducts {
+    _id
+    nombre
+	precio
+	stock
+	codigo
+  }
+}

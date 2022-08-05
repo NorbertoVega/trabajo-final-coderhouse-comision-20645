@@ -5,10 +5,22 @@ import config from '../config.js';
 import os from 'os';
 import logger from './logger/logger.js';
 
+import { graphqlHTTP } from "express-graphql";
+import { productSchema } from "./graphql/index.js";
+
 const app = express();
 
 app.use('/api', router);
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(
+    "/graphql",
+    graphqlHTTP({
+        graphiql: true,
+        schema: productSchema,
+    })
+);
 
 function createServer() {
     app.listen(config.PORT, () => {
