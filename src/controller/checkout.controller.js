@@ -1,7 +1,7 @@
-import logger from '../logger/logger.js';
+import logger from '../utils/logger/logger.js';
 import { sendSMS } from '../utils/smsSender.js';
 import { sendWhatsApp } from '../utils/whatsAppSender.js';
-import { getCarritoByIdService } from '../services/carrito.service.js';
+import { getCartByIdSrv } from '../services/cart.service.js';
 import { sendCheckoutEmail } from '../services/checkout.service.js';
 
 export async function checkout(req, res) {
@@ -11,7 +11,7 @@ export async function checkout(req, res) {
         const telephone = req.body.telephone;
         const nombre = req.body.nombre;
         const email = req.body.email;
-        const cart = await getCarritoByIdService(idCart);
+        const cart = await getCartByIdSrv(idCart);
 
         sendCheckoutEmail(email, nombre, cart)        
         sendSMS(telephone);

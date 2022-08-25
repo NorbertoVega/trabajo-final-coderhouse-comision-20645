@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import express from 'express';
-import product from './producto.js';
-import carrito from './carrito.js';
-import usuario from './usuario.js';
-import logger from '../logger/logger.js';
-import checkout from './checkout.js';
+import product from './product.router.js';
+import cart from './cart.router.js';
+import user from './user.router.js';
+import logger from '../utils/logger/logger.js';
+import checkout from './checkout.router.js';
 import { initializePassport } from '../utils/initPassport.js';
 import { isAuth } from '../middleware/auth.js';
 import { initializePersistence } from '../utils/connectToDB.js';
@@ -15,9 +15,9 @@ router.use(express.json());
 initializePersistence();
 initializePassport(router);
 
-router.use('/usuario', usuario);
+router.use('/usuario', user);
 router.use('/producto', isAuth, product);
-router.use('/carrito', isAuth, carrito);
+router.use('/carrito', isAuth, cart);
 router.use('/checkout', isAuth, checkout);
 
 router.use((req, res) => {

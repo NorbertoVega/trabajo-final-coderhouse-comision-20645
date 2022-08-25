@@ -2,16 +2,13 @@ import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import connectMongo from 'connect-mongo';
 import { Strategy } from 'passport-local';
-import { getAllUsersService } from '../services/usuario.service.js'
+import { getAllUsers } from '../services/user.service.js'
 import config from '../../config.js';
 import passport from 'passport';
 import bcrypt from 'bcrypt';
-import logger from '../logger/logger.js';
+import logger from './logger/logger.js';
 
 export function initializePassport(router) {
-
-    if (config.PERSISTENCE == 'MEMORIA' || config.PERSISTENCE == 'ARCHIVO')
-        return;
 
     const LocalStrategy = Strategy;
 
@@ -23,7 +20,7 @@ export function initializePassport(router) {
     passport.use(new LocalStrategy(
         function (username, password, done) {
             logger.info(`Ruta: /api/usuario/login, Method: POST`);
-            getAllUsersService().then(async (allUsers) => {
+            getAllUsers().then(async (allUsers) => {
                 const usuario = allUsers.find(usuario => usuario.email === username);
                 if (!usuario) {
                     logger.error('Login: Usuario no existe');
@@ -48,7 +45,7 @@ export function initializePassport(router) {
     });
 
     passport.deserializeUser((email, done) => {
-        getAllUsersService().then((allUsers) => {
+        getAllUsers().then((allUsers) => {
             const usuario = allUsers.find(usuario => usuario.email === email);
             done(null, usuario);
         }

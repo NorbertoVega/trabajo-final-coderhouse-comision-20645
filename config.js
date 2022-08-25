@@ -24,7 +24,7 @@ const config = {
     EMAIL_SENDER: process.env.EMAIL_SENDER,
     PASSWORD_EMAIL_SENDER: process.env.PASSWORD_EMAIL_SENDER,
     ADMIN_EMAIL: process.env.ADMIN_EMAIL,
-    TEST: process.env.TEST
+    TEST: process.env.TEST === 'true'
 }
 
 export default config;

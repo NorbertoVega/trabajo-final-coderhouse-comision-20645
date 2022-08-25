@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import config from '../../config.js';
-import logger from '../logger/logger.js';
+import logger from '../utils/logger/logger.js';
 
 function connectToMongoDB() {
     mongoose.connect(config.MONGO_CONNECTION_STRING, {

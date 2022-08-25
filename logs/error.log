@@ -68,3 +68,24 @@
 {"level":"error","message":"Producto no encontrado."}
 {"level":"error","message":"Ruta: /api/productos método:POST no autorizada."}
 {"level":"error","message":"Producto a agregar con formato inválido."}
+{"level":"error","message":"Registro: Error al registrar usuario. Error: ReferenceError: UserDTO is not defined"}
+{"level":"error","message":"Login: Credenciales incorrectas"}
+{"level":"error","message":"Ruta: /api/productos método:POST no autorizada."}
+{"level":"error","message":"Ruta: /api/productos método:POST no autorizada."}
+{"level":"error","message":"Producto a agregar con formato inválido."}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"Producto no encontrado. No se pudo actualizar."}
+{"level":"error","message":"Ruta: /api/productos método:DELETE no autorizada."}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"Error al agregar producto al carrito: TypeError: Cannot read properties of undefined (reading 'push')"}
+{"level":"error","message":"El carrito ya existe"}
+{"level":"error","message":"Usuario no encontrado. No se pudo guardar carrito."}
+{"level":"error","message":"El carrito ya existe"}
+{"level":"error","message":"El carrito ya existe"}
+{"level":"error","message":"El carrito ya existe"}
+{"level":"error","message":"El carrito ya existe"}
+{"level":"error","message":"El carrito ya existe"}
+{"level":"error","message":"No se pudo agregar al carrito. Carrito no encontrado."}
+{"level":"error","message":"Error al agregar producto al carrito: ReferenceError: index is not defined"}
+{"level":"error","message":"No se pudo agregar al carrito. Carrito no encontrado."}

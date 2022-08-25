@@ -1,5 +1,5 @@
 import { createTransport } from 'nodemailer';
-import logger from '../logger/logger.js';
+import logger from './logger/logger.js';
 import config from '../../config.js';
 
 export async function sendEmail(body, subjectString, email) {

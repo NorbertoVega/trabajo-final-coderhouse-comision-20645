@@ -1,11 +1,14 @@
+import { isAdmin } from "../services/user.service.js";
 
-export function validateProductBodyAndAuthenticate(req, res, next) {
+export async function validFieldsAndAdmin(req, res, next) {
     const body = req.body;
-    req.invalidBody = body.nombre == null || body.descripcion == null || body.codigo == null ||
-        body.url == null || body.precio == null || body.stock == null;
+    req.invalidBody = body.code == null || body.name == null || body.description == null ||
+        body.category == null || body.unitPrice == null || body.stock == null || body.imageUrl == null;
 
-    if (body.admin != null && body.admin != undefined)
-        req.isAdmin = body.admin;
-
+    if (body.email != undefined){
+        const admin = await isAdmin(body.email)
+        req.isAdmin = admin === null ? false: admin;
+    }
+        
     next();
 }
