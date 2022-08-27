@@ -89,3 +89,10 @@
 {"level":"error","message":"No se pudo agregar al carrito. Carrito no encontrado."}
 {"level":"error","message":"Error al agregar producto al carrito: ReferenceError: index is not defined"}
 {"level":"error","message":"No se pudo agregar al carrito. Carrito no encontrado."}
+{"level":"error","message":"ContenedorMongoDB-updateById(). Error: MongoServerError: Performing an update on the path '_id' would modify the immutable field '_id'"}
+{"level":"error","message":"ContenedorMongoDB-save(). Error: ValidationError: orderNumber: Cast to string failed for value \"Promise { 0 }\" (type Promise) at path \"orderNumber\", items.0.description: Path `description` is required."}
+{"level":"error","message":"Hubo un error al hacer el checkout."}
+{"level":"error","message":"ContenedorMongoDB-updateById(). Error: MongoServerError: Performing an update on the path '_id' would modify the immutable field '_id'"}
+{"level":"error","message":"ContenedorMongoDB-save(). Error: ValidationError: orderNumber: Cast to string failed for value \"Promise { 0 }\" (type Promise) at path \"orderNumber\""}
+{"level":"error","message":"Hubo un error al hacer el checkout."}
+{"level":"error","message":"ContenedorMongoDB-updateById(). Error: MongoServerError: Performing an update on the path '_id' would modify the immutable field '_id'"}

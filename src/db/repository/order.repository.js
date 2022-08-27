@@ -29,6 +29,10 @@ class OrderRepository {
     async updateById(id, cart) {
         return await this.orderDao.updateById(id, cart);
     }
+
+    async countOrders() {
+        return await this.orderDao.countDocuments();
+    }
 }
 
 export default OrderRepository;

@@ -3,6 +3,6 @@ import { checkout } from '../controller/checkout.controller.js';
 
 const router = express();
 
-router.post('/:id_cart', checkout);
+router.post('/:idCart', checkout);
 
 export default router;

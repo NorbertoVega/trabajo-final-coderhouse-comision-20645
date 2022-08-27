@@ -87,6 +87,16 @@ class MongoDBContainer {
             return null;
         }
     }
+
+    async countDocuments() {
+        try {
+            return this.model.countDocuments({});
+        }
+        catch (error) {
+            logger.error(`ContenedorMongoDB-updateById(). Error: ${error}`);
+            return null;
+        }
+    }
 }
 
 export default MongoDBContainer;
