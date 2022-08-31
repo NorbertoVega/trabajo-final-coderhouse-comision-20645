@@ -1,9 +1,7 @@
 export class MessageDTO {
-    constructor(emailSender, emailReceiver, text, type) {
-        this.emailSender = emailSender; 
-        this.emailReceiver = emailReceiver;  
+    constructor(email, text) {
+        this.email = email; 
         this.text = text; 
         this.timestamp = Date.now();
-        this.type = type;
     }
 }

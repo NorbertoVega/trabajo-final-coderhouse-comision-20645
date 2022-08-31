@@ -29,6 +29,12 @@ class MessageRepository {
     async updateById(id, cart) {
         return await this.messageDao.updateById(id, cart);
     }
+
+    async getMessagesByEmail(email) {
+        return await this.messageDao.getByEmail(email);
+    }
+    
+
 }
 
 export default MessageRepository;

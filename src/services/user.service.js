@@ -18,9 +18,9 @@ export async function hashPassword(password) {
     return await bcrypt.hash(password, saltRounds);
 }
 
-export async function sendRegisterEmail(nombre, email, direccion) {
+export async function sendRegisterEmail(name, lastName, email, direccion) {
     const subjectString = `Nuevo registro`;
-    const bodyString = `<p>Nombre: ${nombre}</p><br><p>Email: ${email}</p><br><P>Dirección: ${direccion}</P>`;
+    const bodyString = `<p>Nombre: ${name} ${lastName}</p><br><p>Email: ${email}</p><br><P>Dirección: ${direccion}</P>`;
     sendEmail(bodyString, subjectString, config.ADMIN_EMAIL);
 }
 

@@ -5,11 +5,13 @@ import router from './router/index.js';
 import config from '../config.js';
 import logger from './utils/logger/logger.js';
 import { socketEventHandler } from './socket/socket.handler.js';
+import cors from 'cors';
 
 const app = express();
 const httpServer = createServer(app); 
 const io = new Server(httpServer);
 
+app.use(cors({ origin: "*" }));
 app.use('/api', router);
 app.use(express.urlencoded({ extended: true }));
 

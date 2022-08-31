@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b12f6dfe-69d8-4db7-ab47-2284567bcb7a",
+		"_postman_id": "1d7c1b8c-dbc5-4d3f-bb69-417156cf3bf5",
 		"name": "Trabajo-Final",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "15810475"
@@ -35,7 +35,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/producto/62c60717905ec01eaf881b3a",
+							"raw": "http://localhost:8080/api/producto/630690ef467bbf1b3c4c4829",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -44,7 +44,29 @@
 							"path": [
 								"api",
 								"producto",
-								"62c60717905ec01eaf881b3a"
+								"630690ef467bbf1b3c4c4829"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/producto/category/:category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/producto/category/monitores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"producto",
+								"category",
+								"monitores"
 							]
 						}
 					},
@@ -57,7 +79,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Mouse Genius\",\r\n    \"descripcion\": \"Motherboard Mother Asus Prime A320m-k ////////////\",\r\n    \"codigo\": \"123151648\",\r\n    \"url\": \"https://http2.mlstatic.com/D_NQ_NP_2X_814476-MLA47101074241_082021-F.webp\",\r\n    \"precio\": 3860,\r\n    \"stock\": 25,\r\n    \"admin\": true\r\n}",
+							"raw": "{\r\n    \"code\": \"123151652\",\r\n    \"name\": \"Monitor gamer LG 27GL650F\",\r\n    \"description\": \"descripcion prod 123151652\",\r\n    \"category\": \"procesadores\",\r\n    \"unitPrice\": 125000,\r\n    \"stock\": 26,\r\n    \"imageUrl\": \"https://http2.mlstatic.com/D_NQ_NP_2X_624926-MLA44490109901_012021-F.webp\",\r\n    \"email\": \"norberto.a.vega@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -86,7 +108,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Monitor Noblex C24RG5\",\r\n    \"descripcion\": \"Monitor Samsung \",\r\n    \"codigo\": \"123151648\",\r\n    \"url\": \"https://http2.mlstatic.com/D_NQ_NP_2X_896735-MLA45212708765_032021-F.webp\",\r\n    \"precio\": 70588,\r\n    \"stock\": 24,\r\n    \"admin\": true\r\n}",
+							"raw": "{\r\n    \"code\": \"123151652\",\r\n    \"name\": \"Monitor gamer LG 27GL650F\",\r\n    \"description\": \"descripcion prod 123151652\",\r\n    \"category\": \"monitores\",\r\n    \"unitPrice\": 125000,\r\n    \"stock\": 26,\r\n    \"imageUrl\": \"https://http2.mlstatic.com/D_NQ_NP_2X_624926-MLA44490109901_012021-F.webp\",\r\n    \"email\": \"norberto.a.vega@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -94,7 +116,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/producto/62c60717905ec01eaf881b3a",
+							"raw": "http://localhost:8080/api/producto/630fe817e7b6bd90dffb99ae",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -103,7 +125,7 @@
 							"path": [
 								"api",
 								"producto",
-								"62c60717905ec01eaf881b3a"
+								"630fe817e7b6bd90dffb99ae"
 							]
 						}
 					},
@@ -116,7 +138,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"admin\": true\r\n}",
+							"raw": "{\r\n    \"email\": \"norberto.a.vega@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -124,7 +146,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/producto/4",
+							"raw": "http://localhost:8080/api/producto/630fc8dd93fcb8092467ed85",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -133,7 +155,7 @@
 							"path": [
 								"api",
 								"producto",
-								"4"
+								"630fc8dd93fcb8092467ed85"
 							]
 						}
 					},
@@ -149,6 +171,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"norberto.a.vega@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:8080/api/carrito/",
 							"protocol": "http",
@@ -170,8 +201,17 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:8080/api/carrito/62c60748905ec01eaf881b40/productos/62c60717905ec01eaf881b3a",
+							"raw": "http://localhost:8080/api/carrito/630fe919e7b6bd90dffb99c0/productos/630fe682e7b6bd90dffb999e",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -180,9 +220,9 @@
 							"path": [
 								"api",
 								"carrito",
-								"62c60748905ec01eaf881b40",
+								"630fe919e7b6bd90dffb99c0",
 								"productos",
-								"62c60717905ec01eaf881b3a"
+								"630fe682e7b6bd90dffb999e"
 							]
 						}
 					},
@@ -194,7 +234,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/carrito/62cfaa35f125f43cb526440e",
+							"raw": "http://localhost:8080/api/carrito/630fe682e7b6bd90dffb999e",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -203,7 +243,7 @@
 							"path": [
 								"api",
 								"carrito",
-								"62cfaa35f125f43cb526440e"
+								"630fe682e7b6bd90dffb999e"
 							]
 						}
 					},
@@ -215,7 +255,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/carrito/3/productos/3",
+							"raw": "http://localhost:8080/api/carrito/630fe919e7b6bd90dffb99c0/productos/630fe682e7b6bd90dffb999e",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -224,9 +264,9 @@
 							"path": [
 								"api",
 								"carrito",
-								"3",
+								"630fe919e7b6bd90dffb99c0",
 								"productos",
-								"3"
+								"630fe682e7b6bd90dffb999e"
 							]
 						}
 					},
@@ -238,7 +278,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/carrito/62c60748905ec01eaf881b40/productos",
+							"raw": "http://localhost:8080/api/carrito/630fe919e7b6bd90dffb99c0/productos",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -247,7 +287,7 @@
 							"path": [
 								"api",
 								"carrito",
-								"62c60748905ec01eaf881b40",
+								"630fe919e7b6bd90dffb99c0",
 								"productos"
 							]
 						}
@@ -266,7 +306,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"email\": \"connie.blanda37@ethereal.email\",\r\n    \"password\": \"1234\",\r\n    \"nombre\": \"Connie\",\r\n    \"direccion\":\"Fake Street 123\",\r\n    \"edad\": 33,\r\n    \"telefono\": 555555,\r\n    \"urlAvatarImage\": \"https://cdn.icon-icons.com/icons2/1736/PNG/512/4043260-avatar-male-man-portrait_113269.png\" }",
+							"raw": "{ \r\n    \"email\": \"tets@test.com\",\r\n    \"password\": \"1234\",\r\n    \"name\": \"test\",\r\n    \"lastName\": \"tst\",\r\n    \"address\":\"Fake Street 124\",\r\n    \"age\": 100,\r\n    \"phoneNumber\": 555555,\r\n    \"urlAvatarImage\": \"https://cdn.icon-icons.com/icons2/1736/PNG/512/4043260-avatar-male-man-portrait_113269.png\" \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -321,11 +361,8 @@
 				},
 				{
 					"name": "/api/usuario/logout",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -347,6 +384,36 @@
 								"api",
 								"usuario",
 								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/usuario/convertUserToAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tets@test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuario/convertUserToAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuario",
+								"convertUserToAdmin"
 							]
 						}
 					},
@@ -391,21 +458,12 @@
 			"name": "Checkout",
 			"item": [
 				{
-					"name": "/checkout/id_cart",
+					"name": "/checkout/:idCart",
 					"request": {
 						"method": "POST",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"telephone\": \"3518058163\",\r\n    \"nombre\": \"Norberto \",\r\n    \"email\": \"norberto.a.vega@gmail.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "http://localhost:8080/api/checkout/62c60748905ec01eaf881b40",
+							"raw": "http://localhost:8080/api/checkout/630fe919e7b6bd90dffb99c0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -414,7 +472,7 @@
 							"path": [
 								"api",
 								"checkout",
-								"62c60748905ec01eaf881b40"
+								"630fe919e7b6bd90dffb99c0"
 							]
 						}
 					},
@@ -423,130 +481,49 @@
 			]
 		},
 		{
-			"name": "client-test",
+			"name": "chat",
 			"item": [
 				{
-					"name": "add product",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Test product 2\",\r\n    \"descripcion\": \"Motherboard Mother Asus Prime A320m-k ////////////\",\r\n    \"codigo\": \"123151648\",\r\n    \"url\": \"https://http2.mlstatic.com/D_NQ_NP_2X_814476-MLA47101074241_082021-F.webp\",\r\n    \"precio\": 3860,\r\n    \"stock\": 25,\r\n    \"admin\": true\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/productos/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"productos",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete product",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"admin\": true\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/productos/62e20cd10cf7d42e89656923",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"productos",
-								"62e20cd10cf7d42e89656923"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update product",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Test product 2 changed\",\r\n    \"descripcion\": \"Motherboard Mother Asus Prime A320m-k ////////////\",\r\n    \"codigo\": \"123151648\",\r\n    \"url\": \"https://http2.mlstatic.com/D_NQ_NP_2X_814476-MLA47101074241_082021-F.webp\",\r\n    \"precio\": 3860,\r\n    \"stock\": 25,\r\n    \"admin\": true\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/productos/62e31d9cf7b07097ee30b3ac",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"productos",
-								"62e31d9cf7b07097ee30b3ac"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get all products",
+					"name": "/api/chats/:email",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/productos/",
+							"raw": "http://localhost:8080/api/chats/norberto.a.vega@gmail.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "8080",
 							"path": [
-								"productos",
-								""
+								"api",
+								"chats",
+								"norberto.a.vega@gmail.com"
 							]
 						}
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "info",
+			"item": [
 				{
-					"name": "get product by id",
+					"name": "/api/info",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/productos/62c60717905ec01eaf881b3a",
+							"raw": "http://localhost:8080/api/info",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "8080",
 							"path": [
-								"productos",
-								"62c60717905ec01eaf881b3a"
+								"api",
+								"info"
 							]
 						}
 					},

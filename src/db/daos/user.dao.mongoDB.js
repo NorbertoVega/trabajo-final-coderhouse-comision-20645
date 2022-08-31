@@ -34,7 +34,6 @@ class UserDaoMongoDB extends MongoDBContainer {
     async updateByEmail(email, user) {
         try {
             const itemToUpdate = await this.getByEmail(email);
-            console.log({itemToUpdate});
             if (itemToUpdate !== null) {
                 await this.model.updateOne({ _id: itemToUpdate._id }, user);
                 return itemToUpdate._id;

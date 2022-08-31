@@ -31,7 +31,7 @@ export async function getIndexInCartSrv(cart, productId) {
 }
 
 export async function deleteProductFromCartSrv(cart, cartId, productId) {
-    cart.products = cart.products.filter(p => p._id.toString() != productId);
+    cart.products = cart.products.filter(p => p.productId != productId);
     return await cartRepository.updateById(cartId, cart);
 }
 

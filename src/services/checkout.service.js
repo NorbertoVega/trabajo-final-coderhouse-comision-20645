@@ -12,9 +12,9 @@ export async function sendCheckoutEmail(user, cart) {
 
     let bodyString = `<h1>Productos</h1><br>`;
 
-    if (cart.productos.length > 0) {
-        for (let i = 0; i < cart.productos.length; i++) {
-            bodyString += `<p>Nombre: ${cart.productos[i].nombre}<br>Precio: ${cart.productos[i].precio}</p><br><br>`
+    if (cart.products.length > 0) {
+        for (let i = 0; i < cart.products.length; i++) {
+            bodyString += `<p>Nombre: ${cart.products[i].name}<br>Precio: $${cart.products[i].unitPrice}<br>Cantidad: ${cart.products[i].quantity}</p><br>`
         }
     }
     sendEmail(bodyString, subjectString, email);

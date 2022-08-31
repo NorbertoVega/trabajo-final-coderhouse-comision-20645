@@ -96,3 +96,19 @@
 {"level":"error","message":"ContenedorMongoDB-save(). Error: ValidationError: orderNumber: Cast to string failed for value \"Promise { 0 }\" (type Promise) at path \"orderNumber\""}
 {"level":"error","message":"Hubo un error al hacer el checkout."}
 {"level":"error","message":"ContenedorMongoDB-updateById(). Error: MongoServerError: Performing an update on the path '_id' would modify the immutable field '_id'"}
+{"level":"error","message":"Existen productos sin stock suficiente."}
+{"level":"error","message":"Hubo un error al hacer el checkout."}
+{"level":"error","message":"EmailSender: error al enviar email: Error: No recipients defined"}
+{"level":"error","message":"EmailSender: error al enviar email: Error: No recipients defined"}
+{"level":"error","message":"EmailSender: error al enviar email: Error: No recipients defined"}
+{"level":"error","message":"ContenedorMongoDB-getById(). Error: CastError: Cast to ObjectId failed for value \"63053e0dc877d113fc7c8c6\" (type string) at path \"_id\" for model \"product\""}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"ContenedorMongoDB-getById(). Error: CastError: Cast to ObjectId failed for value \"63053e0dc877d113fc7c8c6\" (type string) at path \"_id\" for model \"product\""}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"ContenedorMongoDB-getById(). Error: CastError: Cast to ObjectId failed for value \"63053e0dc877d113fc7c8c6\" (type string) at path \"_id\" for model \"product\""}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"ContenedorMongoDB-save(). Error: ValidationError: unitPrice: Cast to Number failed for value \"perifericos\" (type string) at path \"unitPrice\", category: Path `category` is required."}
+{"level":"error","message":"Error al agregar producto: Error: Hubo un problema en save(): product validation failed: unitPrice: Cast to Number failed for value \"perifericos\" (type string) at path \"unitPrice\", category: Path `category` is required."}
+{"level":"error","message":"Producto no encontrado."}
+{"level":"error","message":"El carrito ya existe"}
+{"level":"error","message":"Carrito no encontrado. No se pudo eliminar."}

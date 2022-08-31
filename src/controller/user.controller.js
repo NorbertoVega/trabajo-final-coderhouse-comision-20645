@@ -35,7 +35,7 @@ export async function registerUser(req, res) {
             else {
                 const user = new UserDTO(email, hashedPassword, name, lastName, address, age, phoneNumber, urlAvatarImage)
                 await saveUser(user);
-                //sendSignUpEmail(name, email, address);
+                sendRegisterEmail(name, lastName, email, address);
                 res.send({ result: 'SUCCESS', message: 'Usuario registrado correctamente.' });
             }
         }
@@ -81,8 +81,6 @@ export async function convertUserToAdmin(req, res) {
         const user = await getUserByEmail(email);
         user.admin = true;
         const idUpdated = await updateUser(email, user);
-        console.log(user);
-        console.log(idUpdated);
         res.send({ result: 'SUCCESS', message: `Usuario ${req.user.email} ahora es Admin.` });
     }
     catch (err) {

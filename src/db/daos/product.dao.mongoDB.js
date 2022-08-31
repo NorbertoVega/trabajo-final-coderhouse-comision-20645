@@ -16,6 +16,20 @@ class ProductDaoMongoDB extends MongoDBContainer {
 
         return instance;
     }
+
+    async getByCategory(category) {
+        try {
+            let response = await this.model.find({ category: category }, { __v: 0 });
+            if (response.length !== 0)
+                return response;
+            else
+                return null;
+        }
+        catch (error) {
+            logger.error(`ContenedorMongoDB-getByEmail(). Error: ${error}`);
+            return null;
+        }
+    }
 }
 
 export default ProductDaoMongoDB;

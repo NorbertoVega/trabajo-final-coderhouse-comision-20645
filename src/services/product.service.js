@@ -21,3 +21,7 @@ export async function updateProductByIdSrv(id, productToUpdate) {
 export async function deleteProductByIdSrv(id) {
     return productRepo.deleteById(id);
 }
+
+export async function getByCategorySrv(category) {
+    return productRepo.getByCategory(category);
+}

@@ -11,3 +11,7 @@
 {"level":"warn","message":"Ruta: http://localhost:8080/productos, Method: GET"}
 {"level":"warn","message":"Ruta: http://localhost:8080/, Method: GET"}
 {"level":"warn","message":"Ruta: http://localhost:8080/productos, Method: GET"}
+{"level":"warn","message":"Ruta: http://localhost:8080/, Method: GET"}
+{"level":"warn","message":"Ruta: http://localhost:8080/, Method: GET"}
+{"level":"warn","message":"Websocket: add-new-message: Usuario no existe"}
+{"level":"warn","message":"Ruta: http://localhost:8080/productocategory/perifericos, Method: GET"}

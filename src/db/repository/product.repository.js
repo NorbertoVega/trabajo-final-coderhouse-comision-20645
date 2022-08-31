@@ -29,6 +29,10 @@ class ProductRepository {
     async updateById(id, productToUpdate) {
         return await this.productDao.updateById(id, productToUpdate);
     }
+
+    async getByCategory(category) {
+        return await this.productDao.getByCategory(category);
+    }
 }
 
 export default ProductRepository;

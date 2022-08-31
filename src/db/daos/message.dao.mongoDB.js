@@ -16,6 +16,20 @@ class MessageDaoMongoDB extends MongoDBContainer {
 
         return instance;
     }
+
+    async getByEmail(email) {
+        try {
+            let response = await this.model.find({ email: email }, { __v: 0 });
+            if (response.length !== 0)
+                return response;
+            else
+                return [];
+        }
+        catch (error) {
+            logger.error(`ContenedorMongoDB-getByEmail(). Error: ${error}`);
+            return null;
+        }
+    }
 }
 
 export default MessageDaoMongoDB;
